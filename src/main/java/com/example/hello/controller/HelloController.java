@@ -12,4 +12,10 @@ public class HelloController {
 		model.addAttribute("hello","Hello Spring Boot User");
 		return "hello";
 	}
+	
+	@GetMapping("/")
+	public String getHello(Model model) {
+		model.addAttribute("hello","Wellcome to xie shi web web");
+		return "hello";
+	}
 }
