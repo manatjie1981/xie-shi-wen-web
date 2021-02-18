@@ -14,8 +14,8 @@ public class HelloController {
 	}
 	
 	@GetMapping("/")
-	public String getHello(Model model) {
-		model.addAttribute("hello","Wellcome to xie shi web web");
+	public String welcome(Model model) {
+		model.addAttribute("hello","			Welcome to xie shi web web			");
 		return "hello";
 	}
 }
