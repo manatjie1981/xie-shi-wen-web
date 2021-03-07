@@ -22,8 +22,8 @@ public class EmployeeController {
 		final String uri = "https://hello-to-service.herokuapp.com/api/v1/employees";
 		RestTemplate restTemplate = new RestTemplate();
 		String result = restTemplate.getForObject(uri, String.class);
-		model.addAttribute("employeeList",result);
-		return "employee";
+		model.addAttribute("employee",result);
+		return "employeeAll";
 	}
 
 	@GetMapping("/hello2EmployeesById")
