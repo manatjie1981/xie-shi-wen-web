@@ -17,10 +17,17 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class HelloController {
 
-	@GetMapping("/login")
-	public String getlogin(Model model) {
-		return "login";
+	//@GetMapping("/login")
+	//public String getlogin(Model model) {
+	//	return "login";
+	//}
+	
+	@PostMapping("/login")
+	public String postBody(@RequestBody String userName,String password) {
+		model.addAttribute("hello","Hello Khun "+userName+" ");
+		return "hello";
 	}
+	
 	
 	@GetMapping("/hello")
 	public String getHello(Model model) {
