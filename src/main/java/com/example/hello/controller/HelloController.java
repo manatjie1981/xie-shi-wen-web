@@ -16,14 +16,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 @Controller
 public class HelloController {
 
-	//@GetMapping("/login")
-	//public String getlogin(Model model) {
-	//	return "login";
-	//}
+	@GetMapping("/login")
+	public String getlogin(Model model) {
+		return "login";
+	}
 	
 	@PostMapping("/login")
 	public String postBody(Model model, @RequestBody String userName2,String userName,String password) {
-		model.addAttribute("hello","Hello Khun "+userName+" "+password);
+		if ((userName == null || "".equals(userName)) && (password == null || "".equals(password))){
+			welcome(model);
+		}else{
+			model.addAttribute("hello","Hello Khun "+userName+" "+password);
+		}
+
 		return "hello";
 	}
 	
