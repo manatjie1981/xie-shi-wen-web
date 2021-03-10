@@ -30,9 +30,6 @@ public class HelloController {
 	
 	@GetMapping("/")
 	public String welcome(Model model) {
-		model.addAttribute("hello","			Welcome to xie shi web web			");
-		model.addAttribute("hello2","			 							First App on cloud			");
-
-		return "hello";
+		return "login";
 	}
 }
