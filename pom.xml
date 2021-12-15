@@ -58,6 +58,14 @@
 			<artifactId>spring-hateoas</artifactId>
 			<version>1.0.5.RELEASE</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-chrome-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>3.14.0</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<plugins>

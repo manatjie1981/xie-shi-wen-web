@@ -2,6 +2,7 @@ package com.example.hello.controller;
 
 import com.example.hello.config.HttpClientConfig;
 import com.example.hello.config.RestTemplateConfig;
+import com.example.hello.service.SeleniumService;
 import org.junit.runner.RunWith;
 import org.springframework.stereotype.Controller;
 import org.springframework.test.context.ContextConfiguration;
@@ -42,5 +43,12 @@ public class HelloController {
 	@GetMapping("/")
 	public String welcome(Model model) {
 		return "login";
+	}
+
+	@GetMapping("/robot")
+	public String robot(Model model) {
+		SeleniumService.robot();
+		model.addAttribute("hello","We can run robot on Spring Boot");
+		return "hello";
 	}
 }
