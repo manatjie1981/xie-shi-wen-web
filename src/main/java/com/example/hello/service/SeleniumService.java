@@ -19,7 +19,7 @@ public class SeleniumService {
             System.out.println("currentPath : "+currentPath);
             System.out.println("currentPath : "+currentPath);
             System.out.println("currentPath : "+currentPath);
-            System.out.println("========================================================================";
+            System.out.println("========================================================================");
 
             String path = currentPath+"/chromedriver.exe";
             System.out.println("path : "+path);
