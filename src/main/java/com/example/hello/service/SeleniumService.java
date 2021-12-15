@@ -3,6 +3,8 @@ package com.example.hello.service;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.File;
+
 public class SeleniumService {
 
     public static void robot(){
@@ -17,8 +19,31 @@ public class SeleniumService {
             System.out.println("currentPath : "+currentPath);
             System.out.println("currentPath : "+currentPath);
             System.out.println("currentPath : "+currentPath);
+            System.out.println("========================================================================";
 
-            System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+            String path = currentPath+"/chromedriver.exe";
+            System.out.println("path : "+path);
+            System.out.println("path : "+path);
+            System.out.println("path : "+path);
+            System.out.println("path : "+path);
+
+
+            File file = new File(path);
+            if (file.exists()){
+                System.out.println("=================> file.exists() file.exists()");
+                System.out.println("=================> file.exists() file.exists()");
+                System.out.println("=================> file.exists() file.exists()");
+                System.out.println("=================> file.exists() file.exists()");
+
+            }else{
+                System.out.println("=================> Not file.exists() Not file.exists()");
+                System.out.println("=================> Not file.exists() Not file.exists()");
+                System.out.println("=================> Not file.exists() Not file.exists()");
+                System.out.println("=================> Not file.exists() Not file.exists()");
+                System.out.println("=================> Not file.exists() Not file.exists()");
+
+            }
+            System.setProperty("webdriver.chrome.driver","/chromedriver.exe");
             WebDriver driver = new ChromeDriver();
 
             String baseUrl = "http://demo.guru99.com/test/newtours/";
