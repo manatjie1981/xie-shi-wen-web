@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class SeleniumService {
 
     public static void robot(){
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\mypc\\AppData\\Local\\Programs\\Python\\Python39\\Scripts\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
         String baseUrl = "http://demo.guru99.com/test/newtours/";
