@@ -6,30 +6,46 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class SeleniumService {
 
     public static void robot(){
-        System.setProperty("webdriver.chrome.driver","chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        try{
+            String currentPath = new java.io.File(".").getCanonicalPath();
+            System.out.println("currentPath : "+currentPath);
+            System.out.println("currentPath : "+currentPath);
+            System.out.println("currentPath : "+currentPath);
+            System.out.println("currentPath : "+currentPath);
+            System.out.println("currentPath : "+currentPath);
+            System.out.println("currentPath : "+currentPath);
+            System.out.println("currentPath : "+currentPath);
+            System.out.println("currentPath : "+currentPath);
+            System.out.println("currentPath : "+currentPath);
 
-        String baseUrl = "http://demo.guru99.com/test/newtours/";
-        String expectedTitle = "Welcome: Mercury Tours";
-        String actualTitle = "";
+            System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+            WebDriver driver = new ChromeDriver();
 
-        // launch Fire fox and direct it to the Base URL
-        driver.get(baseUrl);
+            String baseUrl = "http://demo.guru99.com/test/newtours/";
+            String expectedTitle = "Welcome: Mercury Tours";
+            String actualTitle = "";
 
-        // get the actual value of the title
-        actualTitle = driver.getTitle();
+            // launch Fire fox and direct it to the Base URL
+            driver.get(baseUrl);
 
-        /*
-         * compare the actual title of the page with the expected one and print
-         * the result as "Passed" or "Failed"
-         */
-        if (actualTitle.contentEquals(expectedTitle)){
-            System.out.println("Test Passed!");
-        } else {
-            System.out.println("Test Failed");
+            // get the actual value of the title
+            actualTitle = driver.getTitle();
+
+            /*
+             * compare the actual title of the page with the expected one and print
+             * the result as "Passed" or "Failed"
+             */
+            if (actualTitle.contentEquals(expectedTitle)){
+                System.out.println("Test Passed!");
+            } else {
+                System.out.println("Test Failed");
+            }
+
+            //close Fire fox
+            driver.close();
+        }catch (Exception e){
+            e.printStackTrace();
         }
 
-        //close Fire fox
-        driver.close();
     }
 }
