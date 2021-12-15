@@ -21,6 +21,14 @@ public class SeleniumService {
             System.out.println("currentPath : "+currentPath);
             System.out.println("========================================================================");
 
+            File directoryPath = new File(currentPath);
+            //List of all files and directories
+            String contents[] = directoryPath.list();
+            System.out.println("List of files and directories in the specified directory:");
+            for(int i=0; i<contents.length; i++) {
+                System.out.println(contents[i]);
+            }
+
             String path = currentPath+"/chromedriver.exe";
             System.out.println("path : "+path);
             System.out.println("path : "+path);
