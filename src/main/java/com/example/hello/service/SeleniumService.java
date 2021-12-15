@@ -29,7 +29,7 @@ public class SeleniumService {
                 System.out.println(contents[i]);
             }
 
-            String path = currentPath+"/chromedriver.exe";
+            String path = currentPath+"/chromedriver";
             System.out.println("path : "+path);
             System.out.println("path : "+path);
             System.out.println("path : "+path);
@@ -51,7 +51,7 @@ public class SeleniumService {
                 System.out.println("=================> Not file.exists() Not file.exists()");
 
             }
-            System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver","chromedriver");
             WebDriver driver = new ChromeDriver();
 
             String baseUrl = "http://demo.guru99.com/test/newtours/";
