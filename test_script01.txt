@@ -1,0 +1,25 @@
+*** Settings ***
+Library    Selenium2Library
+
+*** Variables ***
+${browser}    chrome
+${url}    https://google.com/   
+
+*** Keywords ***
+เปิดเว็บ google.com
+    Open Browser     ${url}     ${browser}
+ค้นหาตาม keywords
+    [Arguments]     ${input_result}
+    Input Text    name=q    ${input_result}
+    Submit Form  
+รอผลลัพธ์
+    [Arguments]     ${expected_result}
+    Wait Until Page Contains    ${expected_result}
+
+*** Test Cases ***
+SearchCase01
+   เปิดเว็บ google.com
+   ค้นหาตาม keywords    ${search_wording}
+   รอผลลัพธ์     ${search_wording}
+   
+   

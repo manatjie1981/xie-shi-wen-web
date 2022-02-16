@@ -2,6 +2,7 @@ package com.example.hello.controller;
 
 import com.example.hello.config.HttpClientConfig;
 import com.example.hello.config.RestTemplateConfig;
+import com.example.hello.service.JavaRunCommand;
 import com.example.hello.service.SeleniumService;
 import org.junit.runner.RunWith;
 import org.springframework.stereotype.Controller;
@@ -21,9 +22,18 @@ public class HelloController {
 	public String getlogin(Model model) {
 		return "login";
 	}
-	
+
+	@GetMapping("/AutoTest")
+	public String getAutoTest(Model model) {
+		return "AutoTest";
+	}
+
 	@PostMapping("/login")
 	public String postBody(Model model, @RequestBody String userName2,String userName,String password) {
+		System.out.println("userName2 : "+userName2);
+		System.out.println("userName : "+userName);
+		System.out.println("password : "+password);
+
 		if ((userName == null || "".equals(userName)) && (password == null || "".equals(password))){
 			welcome(model);
 		}else{
@@ -31,6 +41,17 @@ public class HelloController {
 		}
 
 		return "hello";
+	}
+
+	@PostMapping("/AutoTest")
+	public String AutoTest(Model model, @RequestBody String wordingSearch2, String wordingSearch) {
+
+		System.out.println("wordingSearch2 : "+wordingSearch2);
+		System.out.println("wordingSearch : "+wordingSearch);
+		String cmd = "cmd.exe /c start robot -v search_wording:"+wordingSearch+" test_script01.txt";
+		JavaRunCommand.runCommand(cmd);
+
+		return "AutoTest";
 	}
 	
 	
