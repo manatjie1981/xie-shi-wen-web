@@ -5,6 +5,8 @@ import com.example.hello.config.RestTemplateConfig;
 import com.example.hello.service.JavaRunCommand;
 import com.example.hello.service.SeleniumService;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.stereotype.Controller;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -12,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = { RestTemplateConfig.class, HttpClientConfig.class })
@@ -71,5 +75,31 @@ public class HelloController {
 		SeleniumService.robot();
 		model.addAttribute("hello","We can run robot on Spring Boot");
 		return "hello";
+	}
+
+	@GetMapping("/AutoTest2")
+	public String getAutoTest2(Model model) {
+		// TODO Auto-generated method stub
+		System.out.println("xxxxxxxxxx 1");
+//setting the driver executable
+		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		System.out.println("xxxxxxxxxx 2");
+//Initiating your chromedriver
+		WebDriver driver=new ChromeDriver();
+		System.out.println("xxxxxxxxxx 3");
+//Applied wait time
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		System.out.println("xxxxxxxxxx 4");
+//maximize window
+		driver.manage().window().maximize();
+		System.out.println("xxxxxxxxxx 5");
+//open browser with desried URL
+		driver.get("https://www.yahoo.com");
+		System.out.println("xxxxxxxxxx 6");
+//closing the browser
+		driver.close();
+		System.out.println("xxxxxxxxxx 7");
+		return "AutoTest";
 	}
 }
