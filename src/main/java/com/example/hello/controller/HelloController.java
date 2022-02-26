@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -82,6 +83,12 @@ public class HelloController {
 		// TODO Auto-generated method stub
 		final String dir = System.getProperty("user.dir");
 		System.out.println("current dir = " + dir);
+		File f = new File("/app/src/main/java/com/example/hello/chromedriver.exe");
+		if (f.exists())
+			System.out.println("Exists");
+		else
+			System.out.println("Does not Exists");
+
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
