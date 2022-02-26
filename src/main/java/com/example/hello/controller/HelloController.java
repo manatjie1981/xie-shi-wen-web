@@ -88,11 +88,21 @@ public class HelloController {
 			System.out.println("Exists");
 		else
 			System.out.println("Does not Exists");
+		String[] pathnames;
+		pathnames = f.list();
+
+		// For each pathname in the pathnames array
+		for (String pathname : pathnames) {
+			// Print the names of files and directories
+			System.out.println(pathname);
+		}
 
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", "src//main//java//com//example//hello//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src//main//java//com//example//hello//test//chromedriver.exe");
+
 		System.out.println("xxxxxxxxxx 2");
 //Initiating your chromedriver
 		WebDriver driver=new ChromeDriver();
