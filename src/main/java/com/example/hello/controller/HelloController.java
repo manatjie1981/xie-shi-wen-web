@@ -80,10 +80,12 @@ public class HelloController {
 	@GetMapping("/AutoTest2")
 	public String getAutoTest2(Model model) {
 		// TODO Auto-generated method stub
+		final String dir = System.getProperty("user.dir");
+		System.out.println("current dir = " + dir);
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src\\main\\java\\com\\example\\hello\\test\\chromedriver.exe");
 		System.out.println("xxxxxxxxxx 2");
 //Initiating your chromedriver
 		WebDriver driver=new ChromeDriver();
