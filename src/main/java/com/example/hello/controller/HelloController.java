@@ -83,7 +83,7 @@ public class HelloController {
 		// TODO Auto-generated method stub
 		final String dir = System.getProperty("user.dir");
 		System.out.println("current dir = " + dir);
-		File f = new File("/app/src/main/java/com/example/hello/chromedriver.exe");
+		File f = new File("/app");
 		if (f.exists())
 			System.out.println("Exists");
 		else
