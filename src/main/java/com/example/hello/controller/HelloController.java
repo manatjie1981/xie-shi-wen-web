@@ -85,15 +85,14 @@ public class HelloController {
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "src//main//java//com//example//hello//test//chromedriver.exe");
-		//System.setProperty("webdriver.chrome.driver", "src\\main\\java\\com\\example\\hello\\test\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "src\\main\\java\\com\\example\\hello\\test\\chromedriver.exe");
 		System.out.println("xxxxxxxxxx 2");
 //Initiating your chromedriver
 		WebDriver driver=new ChromeDriver();
 		System.out.println("xxxxxxxxxx 3");
 //Applied wait time
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		System.out.println("xxxxxxxxxx 	4");
+		System.out.println("xxxxxxxxxx 4");
 //maximize window
 		driver.manage().window().maximize();
 		System.out.println("xxxxxxxxxx 5");
