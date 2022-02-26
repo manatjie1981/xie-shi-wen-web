@@ -85,7 +85,7 @@ public class HelloController {
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "app//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "//chromedriver.exe");
 		System.out.println("xxxxxxxxxx 2");
 //Initiating your chromedriver
 		WebDriver driver=new ChromeDriver();
