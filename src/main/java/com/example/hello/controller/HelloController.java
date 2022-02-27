@@ -83,14 +83,15 @@ public class HelloController {
 		// TODO Auto-generated method stub
 		final String dir = System.getProperty("user.dir");
 		System.out.println("current dir = " + dir);
-
-		showPermissionFile("/app");
-		showPermissionFile("//app//src//main//java//com//example//hello//test//");
+		setPermissionFile("//app");
+		showPermissionFile("//app");
+		//showPermissionFile("//app//src//main//java//com//example//hello//test//");
 
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "//app//src//main//java//com//example//hello//test//chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "//app//src//main//java//com//example//hello//test//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "//app//chromedriver.exe");
 
 		System.out.println("xxxxxxxxxx 2");
 //Initiating your chromedriver
@@ -109,6 +110,18 @@ public class HelloController {
 		driver.close();
 		System.out.println("xxxxxxxxxx 7");
 		return "AutoTest";
+	}
+
+	private void setPermissionFile(String path){
+		File f = new File(path);
+		String[] pathnames = f.list();
+		for (String pathname : pathnames) {
+			// Print the names of files and directories
+			File file = new File(pathname);
+			file.setReadable(true, false);
+			file.setExecutable(true, false);
+			file.setWritable(true, false);
+		}
 	}
 
 	private void showPermissionFile(String path){
