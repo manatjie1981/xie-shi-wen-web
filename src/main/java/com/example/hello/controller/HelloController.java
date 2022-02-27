@@ -83,16 +83,12 @@ public class HelloController {
 		// TODO Auto-generated method stub
 		final String dir = System.getProperty("user.dir");
 		System.out.println("current dir = " + dir);
-		setPermissionFile("//app");
-
-		showPermissionFile("//app");
-		//showPermissionFile("//app//src//main//java//com//example//hello//test//");
-		commandLine("ls -l");
+		showPermissionFile(dir+"//src//main//java//com//example//hello//test//");
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
-		//System.setProperty("webdriver.chrome.driver", "//app//src//main//java//com//example//hello//test//chromedriver2.exe");
-		System.setProperty("webdriver.chrome.driver", "//app//chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", dir+"//src//main//java//com//example//hello//test//chromedriver2.exe");
+		System.setProperty("webdriver.chrome.driver", dir+"//src//main//java//com//example//hello//test//chromedriver_linux64");
 
 		System.out.println("xxxxxxxxxx 2");
 //Initiating your chromedriver
@@ -105,7 +101,7 @@ public class HelloController {
 		driver.manage().window().maximize();
 		System.out.println("xxxxxxxxxx 5");
 //open browser with desried URL
-		driver.get("https://www.yahoo.com");
+		driver.get("https://www.google.com");
 		System.out.println("xxxxxxxxxx 6");
 //closing the browser
 		driver.close();
@@ -150,6 +146,8 @@ public class HelloController {
 				System.out.println(pathname+" : canExecute");
 			}else if (file.canRead()){
 				System.out.println(pathname+" : canRead");
+			}else{
+				System.out.println(pathname+" : no permission");
 			}
 		}
 	}

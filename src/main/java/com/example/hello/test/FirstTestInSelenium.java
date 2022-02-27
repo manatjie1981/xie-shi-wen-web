@@ -13,7 +13,7 @@ public class FirstTestInSelenium {
         System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
         //System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
-        System.setProperty("webdriver.chrome.driver", "src\\main\\java\\com\\example\\hello\\test\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\main\\java\\com\\example\\hello\\test\\chromedriver2.exe");
         System.out.println("xxxxxxxxxx 2");
 //Initiating your chromedriver
         WebDriver driver=new ChromeDriver();
@@ -25,7 +25,7 @@ public class FirstTestInSelenium {
         driver.manage().window().maximize();
         System.out.println("xxxxxxxxxx 5");
 //open browser with desried URL
-        driver.get("https://www.yahoo.com");
+        driver.get("https://www.google.com");
         System.out.println("xxxxxxxxxx 6");
 //closing the browser
         driver.close();
