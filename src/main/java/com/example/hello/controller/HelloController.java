@@ -83,25 +83,14 @@ public class HelloController {
 		// TODO Auto-generated method stub
 		final String dir = System.getProperty("user.dir");
 		System.out.println("current dir = " + dir);
-		File f = new File("/app");
-		if (f.exists())
-			System.out.println("Exists");
-		else
-			System.out.println("Does not Exists");
-		String[] pathnames;
-		pathnames = f.list();
 
-		// For each pathname in the pathnames array
-		for (String pathname : pathnames) {
-			// Print the names of files and directories
-			System.out.println(pathname);
-		}
+		showPermissionFile("/app");
+		showPermissionFile("//app//src//main//java//com//example//hello//test//");
 
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "src//main//java//com//example//hello//chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "src//main//java//com//example//hello//test//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "//app//src//main//java//com//example//hello//test//chromedriver.exe");
 
 		System.out.println("xxxxxxxxxx 2");
 //Initiating your chromedriver
@@ -120,5 +109,29 @@ public class HelloController {
 		driver.close();
 		System.out.println("xxxxxxxxxx 7");
 		return "AutoTest";
+	}
+
+	private void showPermissionFile(String path){
+		File f = new File(path);
+		if (f.exists())
+			System.out.println("Exists");
+		else
+			System.out.println("Does not Exists");
+		String[] pathnames;
+		pathnames = f.list();
+
+		// For each pathname in the pathnames array
+		for (String pathname : pathnames) {
+			// Print the names of files and directories
+			System.out.println(pathname);
+			File file = new File(pathname);
+			if(file.canWrite()) {
+				System.out.println(pathname+" : canWrite");
+			} else if (file.canExecute()){
+				System.out.println(pathname+" : canExecute");
+			}else if (file.canRead()){
+				System.out.println(pathname+" : canRead");
+			}
+		}
 	}
 }
