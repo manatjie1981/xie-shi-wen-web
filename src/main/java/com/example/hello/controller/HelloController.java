@@ -87,7 +87,7 @@ public class HelloController {
 
 		showPermissionFile("//app");
 		//showPermissionFile("//app//src//main//java//com//example//hello//test//");
-
+		commandLine("ls -l");
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
@@ -151,6 +151,14 @@ public class HelloController {
 			}else if (file.canRead()){
 				System.out.println(pathname+" : canRead");
 			}
+		}
+	}
+
+	private void commandLine(String cmd){
+		try{
+			Process process = Runtime.getRuntime().exec(cmd);
+		}catch (Exception e){
+			e.printStackTrace();
 		}
 	}
 }
