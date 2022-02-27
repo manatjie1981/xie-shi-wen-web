@@ -90,7 +90,7 @@ public class HelloController {
 		System.out.println("xxxxxxxxxx 1");
 //setting the driver executable
 		//System.setProperty("webdriver.chrome.driver", "D:\\webdriver\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", "//app//src//main//java//com//example//hello//test//chromedriver2.exe");
+		System.setProperty("webdriver.chrome.driver", "//app//src//main//java//com//example//hello//test//chromedriver2");
 		//System.setProperty("webdriver.chrome.driver", "//app//chromedriver.exe");
 
 		System.out.println("xxxxxxxxxx 2");
