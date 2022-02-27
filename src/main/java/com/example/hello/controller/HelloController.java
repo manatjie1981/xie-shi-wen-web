@@ -147,6 +147,7 @@ public class HelloController {
 			}else if (file.canRead()){
 				System.out.println(pathname+" : canRead");
 			}else{
+				file.setExecutable(true);
 				System.out.println(pathname+" : no permission");
 			}
 		}
